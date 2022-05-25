@@ -32,7 +32,8 @@ module.exports = function (bundler, pluginOpts = {}) {
   const isNodeModule = (file, cwd) => {
     const dir = path.dirname(file);
     const relative = relativePath(cwd, dir);
-    return relative.startsWith(`node_modules${path.sep}`);
+
+    return relative.startsWith(`node_modules${path.sep}`) || relative.includes('node_modules');
   };
 
   // Patch browserify resolve algorithm
