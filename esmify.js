@@ -30,6 +30,8 @@ module.exports = function (bundler, pluginOpts = {}) {
 
   // Utility -> true if path is a top-level node_modules (i.e. not in source)
   const isNodeModule = (file, cwd) => {
+    //
+    return true
     const dir = path.dirname(file);
     const relative = relativePath(cwd, dir);
 
